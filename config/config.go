@@ -31,19 +31,30 @@ type serverConfig struct {
 	WxLoginURL      string
 	GroupCodeSecret string
 	SecretKey       string
-	ShowSQL         bool
+	Showsql         bool
 }
 
 type serverStartupFlags struct {
 	Host        string
 	Port        int
 	Environment string
+	//增加新参数
+	TODO_DATASOURCE_HOST     string
+	TODO_DATASOURCE_USERNAME string
+	TODO_DATASOURCE_PASSWORD string
+	TODO_REDIS_HOST          string
+	TODO_REDIS_PORT          int
+	TODO_REDIS_PASSWORD      string
+	TODO_ShowSQL             bool
+	TODO_Appid               string
+	TODO_Secret              string
 }
 
 // LoadConfig 加载配置文件
 func LoadConfig() {
 	// 设置配置文件名
 	configName := fmt.Sprintf("%s-%s", "config", ServerStartupFlags.Environment)
+	//fmt.Println(configName)
 	viper.SetConfigName(configName)
 	// 设置配置文件路径
 	viper.AddConfigPath("conf")
@@ -55,7 +66,30 @@ func LoadConfig() {
 
 // GetDBConfig 获取db配置
 func GetDBConfig() map[string]interface{} {
-	return viper.GetStringMap("db")
+	db := viper.GetStringMap("db")
+	if v, ok := db["mysql"]; ok {
+		v1 := v.(map[string]interface{})
+		if ServerStartupFlags.TODO_DATASOURCE_HOST != "" {
+			v1["host"] = ServerStartupFlags.TODO_DATASOURCE_HOST
+		}
+		if ServerStartupFlags.TODO_DATASOURCE_USERNAME != "" {
+			v1["username"] = ServerStartupFlags.TODO_DATASOURCE_USERNAME
+		}
+		if ServerStartupFlags.TODO_DATASOURCE_PASSWORD != "" {
+			v1["password"] = ServerStartupFlags.TODO_DATASOURCE_PASSWORD
+		}
+	}
+
+	if v, ok := db["redis"]; ok {
+		v1 := v.(map[string]interface{})
+		if ServerStartupFlags.TODO_REDIS_HOST != "" {
+			v1["host"] = ServerStartupFlags.TODO_REDIS_HOST
+		}
+		if ServerStartupFlags.TODO_REDIS_PASSWORD != "" {
+			v1["password"] = ServerStartupFlags.TODO_REDIS_PASSWORD
+		}
+	}
+	return db
 }
 
 // GetServerConfig 获取服务器配置
@@ -73,8 +107,16 @@ func buildServerConfig() {
 		WxLoginURL:      cast.ToString(cfg["wxloginurl"]),
 		GroupCodeSecret: cast.ToString(cfg["groupcodesecret"]),
 		SecretKey:       cast.ToString(cfg["secretkey"]),
-		ShowSQL:         cast.ToBool(cfg["showsql"]),
+		Showsql:         cast.ToBool(cfg["showsql"]),
 	}
+	//命令行替换
+	if ServerStartupFlags.TODO_Appid != "" {
+		ServerConfig.Appid = ServerStartupFlags.TODO_Appid
+	}
+	if ServerStartupFlags.TODO_Secret != "" {
+		ServerConfig.Secret = ServerStartupFlags.TODO_Secret
+	}
+	ServerConfig.Showsql = ServerStartupFlags.TODO_ShowSQL
 	ServerConfig.Port = ServerStartupFlags.Port
 	ServerConfig.Host = ServerStartupFlags.Host
 }
@@ -85,6 +127,16 @@ func buildFlags() {
 	flag.StringVar(&ServerStartupFlags.Host, "host", "127.0.0.1", "listening host")
 	flag.IntVar(&ServerStartupFlags.Port, "port", 7410, "listening port")
 	flag.StringVar(&ServerStartupFlags.Environment, "env", "dev", "run time environment")
+
+	flag.StringVar(&ServerStartupFlags.TODO_DATASOURCE_HOST, "TODO_DATASOURCE_HOST", "127.0.0.1", "mysql host")
+	flag.StringVar(&ServerStartupFlags.TODO_DATASOURCE_USERNAME, "TODO_DATASOURCE_USERNAME", "root", "mysql username")
+	flag.StringVar(&ServerStartupFlags.TODO_DATASOURCE_PASSWORD, "TODO_DATASOURCE_PASSWORD", "123456", "mysql pwd")
+	flag.StringVar(&ServerStartupFlags.TODO_REDIS_HOST, "TODO_REDIS_HOST", "127.0.0.1", "redis host")
+	flag.StringVar(&ServerStartupFlags.TODO_REDIS_PASSWORD, "TODO_REDIS_PASSWORD", "", "redis pwd")
+	flag.BoolVar(&ServerStartupFlags.TODO_ShowSQL, "TODO_ShowSQL", false, "show sql")
+	flag.StringVar(&ServerStartupFlags.TODO_Appid, "TODO_Appid", "", "appid")
+	flag.StringVar(&ServerStartupFlags.TODO_Secret, "TODO_Secret", "", "secret")
+
 	if !flag.Parsed() {
 		flag.Parse()
 	}

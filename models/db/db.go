@@ -1,6 +1,7 @@
 package db
 
 import (
+	"fmt"
 	"github.com/pibigstar/go-todo/config"
 	"github.com/pibigstar/go-todo/utils/logger"
 	"github.com/spf13/cast"
@@ -10,6 +11,7 @@ var log = logger.New("db")
 
 func init() {
 	dbCfg := config.GetDBConfig()
+	fmt.Println(dbCfg)
 	mysql := &mysql{}
 	redis := &redis{}
 	regist(mysql)
