@@ -70,12 +70,12 @@ func (t *Task) SetRead(id int) error {
 	return err
 }
 func (t *Task) CountTask(openId string, status int) (int, error) {
-	var count int
+	var count int64
 	err := db.Mysql.Table(t.TableName()).Where("appoint_to = ? and status = ?", openId, status).Count(&count).Error
 	if err != nil {
 		return 0, err
 	}
-	return count, nil
+	return int(count), nil
 }
 func (t *Task) TaskList() (*[]Task, error) {
 	var tasks []Task
