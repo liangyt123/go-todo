@@ -9,7 +9,7 @@ import (
 
 var log = logger.New("db")
 
-func init() {
+func Init1() {
 	dbCfg := config.GetDBConfig()
 	fmt.Println(dbCfg)
 	mysql := &mysql{}
