@@ -3,7 +3,7 @@ package db
 import (
 	"fmt"
 
-	mmysql "github.com/go-sql-driver/mysql"
+	mmysql  "gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"github.com/spf13/cast"
 )
@@ -46,7 +46,7 @@ func (m *mysql) Init(conf map[string]interface{}) error {
         "CREATE DATABASE IF NOT EXISTS `%s` CHARACTER SET utf8mb4;",
         cast.ToString(conf["db"]),
     )
-    db.Exec(createSQL).Error
+    db.Exec(createSQL)
 	return nil
 }
 
