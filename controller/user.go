@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/go-gorm/gorm"
+	"gorm.io/gorm"
 	"github.com/pibigstar/go-todo/middleware"
 	"github.com/pibigstar/go-todo/models"
 

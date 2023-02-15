@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/go-gorm/gorm"
+	"gorm.io/gorm"
 	"github.com/spf13/cast"
 )
 

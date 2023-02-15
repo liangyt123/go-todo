@@ -3,7 +3,7 @@ package models
 import (
 	"time"
 
-	"github.com/go-gorm/gorm"
+	"gorm.io/gorm"
 	"github.com/pkg/errors"
 
 	"github.com/pibigstar/go-todo/models/db"
