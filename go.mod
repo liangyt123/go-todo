@@ -9,7 +9,7 @@ require (
 	github.com/gogf/gf v1.9.10
 	github.com/google/go-cmp v0.3.0 // indirect
 	github.com/google/uuid v1.1.1 // indirect
-	github.com/jinzhu/gorm v1.9.8
+	github.com/go-gorm/gorm v1.9.8
 	github.com/jinzhu/inflection v0.0.0-20190603042836-f5c5f50e6090 // indirect
 	github.com/lib/pq v1.1.1 // indirect
 	github.com/magiconair/properties v1.8.1 // indirect

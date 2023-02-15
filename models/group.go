@@ -2,9 +2,8 @@ package models
 
 import (
 	"github.com/gogf/gf/util/gconv"
-	"github.com/jinzhu/gorm"
+	"github.com/go-gorm/gorm"
 	"time"
-	"sync"
 	"github.com/pibigstar/go-todo/models/db"
 )
 

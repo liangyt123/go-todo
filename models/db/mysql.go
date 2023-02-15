@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/jinzhu/gorm"
+	"github.com/go-gorm/gorm"
 	"github.com/spf13/cast"
 )
 
@@ -19,6 +19,7 @@ type myDB struct {
 type mysql struct {
 	db *myDB //为了实现关闭数据库，所以在内部持有一个DB对象
 }
+
 
 func url(conf map[string]interface{}) string {
 	user := cast.ToString(conf["username"])
