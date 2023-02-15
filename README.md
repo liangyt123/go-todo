@@ -1,5 +1,5 @@
 # 1. Todo
-[![Build Status](https://travis-ci.org/pibigstar/go-todo.svg?branch=master)](https://travis-ci.org/pibigstar/go-todo)
+[![Build Status](https://travis-ci.org/liangyt123/go-todo.svg?branch=master)](https://travis-ci.org/liangyt123/go-todo)
 
 > 此项目是todo小程序的后台，todo是一个任务发布提醒小程序，你可以加入一个组织，在里面可以给成员发布一些待完成的任务，主要服务于学校和一些公司之间，为了更加方便的管理任务需求而制作的一款小程序应用。
 
@@ -143,9 +143,9 @@ docker rmi go-todo
 
 ## 相关项目
 
-- [任务发布系统后端-go语言编写](https://github.com/pibigstar/go-todo)
-- [任务发布系统小程序端](https://github.com/pibigstar/wx-todo)
-- [任务发布系统后端-react编写](https://github.com/pibigstar/admin-todo)
+- [任务发布系统后端-go语言编写](https://github.com/liangyt123/go-todo)
+- [任务发布系统小程序端](https://github.com/liangyt123/wx-todo)
+- [任务发布系统后端-react编写](https://github.com/liangyt123/admin-todo)
 
 
 ## 项目结构

@@ -5,8 +5,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/pibigstar/go-todo/cron/jobs"
-	"github.com/pibigstar/go-todo/utils/logger"
+	"github.com/liangyt123/go-todo/cron/jobs"
+	"github.com/liangyt123/go-todo/utils/logger"
 	"github.com/robfig/cron"
 )
 

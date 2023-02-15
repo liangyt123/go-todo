@@ -5,7 +5,7 @@ require (
 	github.com/go-redis/redis v6.15.2+incompatible
 	github.com/gogf/gf v1.9.10
 	github.com/pborman/uuid v1.2.0
-	github.com/pibigstar/go-todo v0.0.0-20191125124719-ef91ec3f8ddb
+	github.com/liangyt123/go-todo v0.0.0-20191125124719-ef91ec3f8ddb
 	github.com/pkg/errors v0.8.1
 	github.com/robfig/cron v1.1.0
 	github.com/spf13/cast v1.3.0

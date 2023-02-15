@@ -8,14 +8,14 @@ import (
 	"time"
 
 	"gorm.io/gorm"
-	"github.com/pibigstar/go-todo/middleware"
-	"github.com/pibigstar/go-todo/models"
+	"github.com/liangyt123/go-todo/middleware"
+	"github.com/liangyt123/go-todo/models"
 
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 	"github.com/gogf/gf/util/gvalid"
-	"github.com/pibigstar/go-todo/config"
-	"github.com/pibigstar/go-todo/utils"
+	"github.com/liangyt123/go-todo/config"
+	"github.com/liangyt123/go-todo/utils"
 )
 
 func init() {

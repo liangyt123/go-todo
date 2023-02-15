@@ -2,8 +2,8 @@ package db
 
 import (
 	"fmt"
-	"github.com/pibigstar/go-todo/config"
-	"github.com/pibigstar/go-todo/utils/logger"
+	"github.com/liangyt123/go-todo/config"
+	"github.com/liangyt123/go-todo/utils/logger"
 	"github.com/spf13/cast"
 )
 

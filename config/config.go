@@ -3,7 +3,7 @@ package config
 import (
 	"flag"
 	"fmt"
-	"github.com/pibigstar/go-todo/utils/logger"
+	"github.com/liangyt123/go-todo/utils/logger"
 	"github.com/spf13/cast"
 	"github.com/spf13/viper"
 	"os"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd "${GOPATH}/src/github.com/pibigstar/go-todo"
+cd "${GOPATH}/src/github.com/liangyt123/go-todo"
 
 find . -name "*.go" -not -path "./vendor/*" | xargs gofmt -w
 

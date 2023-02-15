@@ -3,7 +3,7 @@ package admin
 import (
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
-	"github.com/pibigstar/go-todo/utils/logger"
+	"github.com/liangyt123/go-todo/utils/logger"
 )
 
 var log = logger.New("admin")

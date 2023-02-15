@@ -16,7 +16,7 @@ func init() {
 }
 
 var (
-	token          = "pibigstar110"
+	token          = "liangyt123110"
 	EncodingAESKey = "yi1CvPLF1ZzablxtMnc93ER7d4W5HBsxVXlPFBtIARE"
 )
 

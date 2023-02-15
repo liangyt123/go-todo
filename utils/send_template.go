@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/pibigstar/go-todo/config"
-	"github.com/pibigstar/go-todo/constant"
-	"github.com/pibigstar/go-todo/models/db"
+	"github.com/liangyt123/go-todo/config"
+	"github.com/liangyt123/go-todo/constant"
+	"github.com/liangyt123/go-todo/models/db"
 )
 
 // 发送模板消息

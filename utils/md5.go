@@ -4,7 +4,7 @@ import (
 	"crypto/md5"
 	"fmt"
 
-	"github.com/pibigstar/go-todo/config"
+	"github.com/liangyt123/go-todo/config"
 )
 
 // Md5 md5加密

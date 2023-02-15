@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
-	"github.com/pibigstar/go-todo/config"
-	"github.com/pibigstar/go-todo/utils"
+	"github.com/liangyt123/go-todo/config"
+	"github.com/liangyt123/go-todo/utils"
 )
 
 var (

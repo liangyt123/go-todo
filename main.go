@@ -1,14 +1,14 @@
 package main
 
 import (
-	_ "github.com/pibigstar/go-todo/controller"
-	_ "github.com/pibigstar/go-todo/controller/admin"
+	_ "github.com/liangyt123/go-todo/controller"
+	_ "github.com/liangyt123/go-todo/controller/admin"
 
 	"github.com/liangyt123/go-todo/models"
 	"github.com/liangyt123/go-todo/models/db"
 
 	"github.com/gogf/gf/frame/g"
-	"github.com/pibigstar/go-todo/config"
+	"github.com/liangyt123/go-todo/config"
 )
 
 func main() {

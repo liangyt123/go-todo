@@ -148,8 +148,8 @@ github.com/pborman/uuid v1.2.0/go.mod h1:X/NO0urCmaxf9VXbdlT7C2Yzkj2IKimNn4k+gtP
 github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/94hg7ilaic=
 github.com/pelletier/go-toml v1.4.0 h1:u3Z1r+oOXJIkxqw34zVhyPgjBsm6X2wn21NWs/HfSeg=
 github.com/pelletier/go-toml v1.4.0/go.mod h1:PN7xzY2wHTK0K9p34ErDQMlFxa51Fk0OUruD3k1mMwo=
-github.com/pibigstar/go-todo v0.0.0-20191125124719-ef91ec3f8ddb h1:N+P4ZwgOGXPRW0VSlpWjEErMpoAlNu4er+ADpIpBA8A=
-github.com/pibigstar/go-todo v0.0.0-20191125124719-ef91ec3f8ddb/go.mod h1:sTG9KqU9jCQrH8q6bZruJ1Cspg/b8QIUbtxwJ6SOTCo=
+github.com/liangyt123/go-todo v0.0.0-20191125124719-ef91ec3f8ddb h1:N+P4ZwgOGXPRW0VSlpWjEErMpoAlNu4er+ADpIpBA8A=
+github.com/liangyt123/go-todo v0.0.0-20191125124719-ef91ec3f8ddb/go.mod h1:sTG9KqU9jCQrH8q6bZruJ1Cspg/b8QIUbtxwJ6SOTCo=
 github.com/pierrec/lz4 v2.0.5+incompatible/go.mod h1:pdkljMzZIN41W+lC3N2tnIh5sFi+IEE17M5jbnwPHcY=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=

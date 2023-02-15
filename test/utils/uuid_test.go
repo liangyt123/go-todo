@@ -3,7 +3,7 @@ package test
 import (
 	"testing"
 
-	"github.com/pibigstar/go-todo/utils"
+	"github.com/liangyt123/go-todo/utils"
 )
 
 func TestUUID(t *testing.T) {

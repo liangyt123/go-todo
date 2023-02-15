@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"gorm.io/gorm"
-	"github.com/pibigstar/go-todo/models/db"
+	"github.com/liangyt123/go-todo/models/db"
 )
 
 var MTask = &Task{}

@@ -3,7 +3,7 @@ package models
 import (
 	"time"
 
-	"github.com/pibigstar/go-todo/models/db"
+	"github.com/liangyt123/go-todo/models/db"
 )
 
 // MUser 引用

@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/gogf/gf/net/ghttp"
-	"github.com/pibigstar/go-todo/utils"
+	"github.com/liangyt123/go-todo/utils"
 )
 
 // GetOpenID 获取OpenID

@@ -6,7 +6,7 @@ import (
 	"gorm.io/gorm"
 	"github.com/pkg/errors"
 
-	"github.com/pibigstar/go-todo/models/db"
+	"github.com/liangyt123/go-todo/models/db"
 )
 
 // MGroupUser 实体外部引用

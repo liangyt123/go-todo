@@ -1,7 +1,7 @@
 # 源镜像(一个极小的Linux)
 FROM loads/alpine:3.8
 # 作者
-LABEL maintainer="pibigstar@sina.com"
+LABEL maintainer="liangyt123@sina.com"
 # 设置固定的项目路径
 ENV WORKDIR /var/www/go-todo
 # 添加应用可执行文件，并设置执行权限

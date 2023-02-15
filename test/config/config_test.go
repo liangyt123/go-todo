@@ -3,7 +3,7 @@ package test
 import (
 	"testing"
 
-	"github.com/pibigstar/go-todo/config"
+	"github.com/liangyt123/go-todo/config"
 )
 
 func TestConfig(t *testing.T) {

@@ -4,7 +4,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/pibigstar/go-todo/config"
+	"github.com/liangyt123/go-todo/config"
 
 	"github.com/dgrijalva/jwt-go"
 )

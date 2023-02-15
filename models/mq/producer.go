@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/pibigstar/go-todo/constant"
+	"github.com/liangyt123/go-todo/constant"
 	"github.com/streadway/amqp"
 )
 
