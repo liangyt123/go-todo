@@ -28,7 +28,7 @@ func init() {
 
 // WxLoginRequest 微信登录request
 type WxLoginRequest struct {
-	Code      string `json:"code" gvalid:"type@required#code码不能为空"`
+	Code      string `json:"code" gvalid:"code@required#code码不能为空"`
 	NickName  string `json:"nickName"`
 	AvatarURL string `json:"avatarUrl"`
 	Gender    int    `json:"gender"`
