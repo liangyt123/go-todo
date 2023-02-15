@@ -28,7 +28,7 @@ func init() {
 
 // WxLoginRequest 微信登录request
 type WxLoginRequest struct {
-	Code      string `json:"code" v:"code@required#code码不能为空"`
+	Code      string `json:"code"`
 	NickName  string `json:"nickName"`
 	AvatarURL string `json:"avatarUrl"`
 	Gender    int    `json:"gender"`
@@ -64,11 +64,13 @@ func wxLogin(r *ghttp.Request) {
 	wxLoginRequest := &WxLoginRequest{}
 	r.GetToStruct(wxLoginRequest)
 
-	if err := gvalid.CheckStruct(wxLoginRequest, nil); err != nil {
+	if wxLoginRequest.Code == "" {
+		err:=fmt.Errorf("code 不能为空")
 		log.Error("code为空", "err", err.String())
 		r.Response.WriteJson(utils.ErrorResponse(err.String()))
 		return
 	}
+	
 	var wxLoginResp WxLoginResponse
 	// 拿到session_key 和 openid
 	client := &http.Client{}
