@@ -13,7 +13,6 @@ import (
 
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
-	"github.com/gogf/gf/util/gvalid"
 	"github.com/liangyt123/go-todo/config"
 	"github.com/liangyt123/go-todo/utils"
 )
@@ -66,8 +65,8 @@ func wxLogin(r *ghttp.Request) {
 
 	if wxLoginRequest.Code == "" {
 		err:=fmt.Errorf("code 不能为空")
-		log.Error("code为空", "err", err.String())
-		r.Response.WriteJson(utils.ErrorResponse(err.String()))
+		log.Error("code为空", "err", err.Error())
+		r.Response.WriteJson(utils.ErrorResponse(err.Error()))
 		return
 	}
 	
