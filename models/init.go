@@ -2,6 +2,8 @@ package models
 
 import (
 	"time"
+	"sync"
+	"github.com/pibigstar/go-todo/models/db"
 	"github.com/pibigstar/go-todo/utils/logger"
 )
 
@@ -12,7 +14,7 @@ func init(){
 	go func(){
 		time.Sleep(time.Second*10)
 		once.Do(onceBody)
-	}
+	}()
 }
 
 var once sync.Once
