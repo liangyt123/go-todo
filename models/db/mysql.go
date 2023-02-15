@@ -3,7 +3,7 @@ package db
 import (
 	"fmt"
 
-	_ "github.com/go-sql-driver/mysql"
+	mmysql "github.com/go-sql-driver/mysql"
 	"gorm.io/gorm"
 	"github.com/spf13/cast"
 )
@@ -35,16 +35,23 @@ func (*mysql) Name() string {
 }
 
 func (m *mysql) Init(conf map[string]interface{}) error {
-	db, err := gorm.Open(m.Name(), url(conf))
+	db, err := gorm.Open(mmysql.Open(url(conf)), &gorm.Config{
+	})
 	if err != nil {
 		return err
 	}
 	Mysql = &myDB{db}
+
+	createSQL := fmt.Sprintf(
+        "CREATE DATABASE IF NOT EXISTS `%s` CHARACTER SET utf8mb4;",
+        db := cast.ToString(conf["db"]),
+    )
+    db.Exec(createSQL).Error
 	return nil
 }
 
 func (m *mysql) Close() {
-	m.db.Close()
+	//m.db.Close()
 }
 
 func (db *myDB) Insert(value interface{}) error {
