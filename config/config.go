@@ -135,7 +135,6 @@ func buildFlags() {
 	ServerStartupFlags.TODO_DATASOURCE_PASSWORD=os.Getenv("TODO_DATASOURCE_PASSWORD")
 	ServerStartupFlags.TODO_REDIS_HOST=os.Getenv("TODO_REDIS_HOST")
 	ServerStartupFlags.TODO_REDIS_PASSWORD=os.Getenv("TODO_REDIS_PASSWORD")
-	ServerStartupFlags.ShowSQL=os.Getenv("ShowSQL")
 	ServerStartupFlags.TODO_Appid=os.Getenv("TODO_Appid")
 	ServerStartupFlags.TODO_Secret=os.Getenv("TODO_Secret")
 
