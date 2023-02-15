@@ -4,7 +4,7 @@ import (
 	"github.com/gogf/gf/util/gconv"
 	"github.com/jinzhu/gorm"
 	"time"
-
+	"sync"
 	"github.com/pibigstar/go-todo/models/db"
 )
 
@@ -31,6 +31,9 @@ type Group struct {
 func (Group) TableName() string {
 	return "groups"
 }
+
+
+
 
 // Insert 创建
 func (*Group) Create(group *Group) error {

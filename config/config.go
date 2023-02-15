@@ -7,6 +7,7 @@ import (
 	"github.com/spf13/cast"
 	"github.com/spf13/viper"
 	"testing"
+	"os"
 )
 
 var log = logger.New("config")
@@ -45,7 +46,7 @@ type serverStartupFlags struct {
 	TODO_REDIS_HOST          string
 	TODO_REDIS_PORT          int
 	TODO_REDIS_PASSWORD      string
-	TODO_ShowSQL             bool
+	ShowSQL             bool
 	TODO_Appid               string
 	TODO_Secret              string
 }
@@ -116,7 +117,7 @@ func buildServerConfig() {
 	if ServerStartupFlags.TODO_Secret != "" {
 		ServerConfig.Secret = ServerStartupFlags.TODO_Secret
 	}
-	ServerConfig.Showsql = ServerStartupFlags.TODO_ShowSQL
+	ServerConfig.Showsql = ServerStartupFlags.ShowSQL
 	ServerConfig.Port = ServerStartupFlags.Port
 	ServerConfig.Host = ServerStartupFlags.Host
 }
@@ -127,15 +128,16 @@ func buildFlags() {
 	flag.StringVar(&ServerStartupFlags.Host, "host", "127.0.0.1", "listening host")
 	flag.IntVar(&ServerStartupFlags.Port, "port", 7410, "listening port")
 	flag.StringVar(&ServerStartupFlags.Environment, "env", "dev", "run time environment")
+	flag.BoolVar(&ServerStartupFlags.ShowSQL, "ShowSQL", false, "show sql")
 
-	flag.StringVar(&ServerStartupFlags.TODO_DATASOURCE_HOST, "TODO_DATASOURCE_HOST", "127.0.0.1", "mysql host")
-	flag.StringVar(&ServerStartupFlags.TODO_DATASOURCE_USERNAME, "TODO_DATASOURCE_USERNAME", "root", "mysql username")
-	flag.StringVar(&ServerStartupFlags.TODO_DATASOURCE_PASSWORD, "TODO_DATASOURCE_PASSWORD", "123456", "mysql pwd")
-	flag.StringVar(&ServerStartupFlags.TODO_REDIS_HOST, "TODO_REDIS_HOST", "127.0.0.1", "redis host")
-	flag.StringVar(&ServerStartupFlags.TODO_REDIS_PASSWORD, "TODO_REDIS_PASSWORD", "", "redis pwd")
-	flag.BoolVar(&ServerStartupFlags.TODO_ShowSQL, "TODO_ShowSQL", false, "show sql")
-	flag.StringVar(&ServerStartupFlags.TODO_Appid, "TODO_Appid", "", "appid")
-	flag.StringVar(&ServerStartupFlags.TODO_Secret, "TODO_Secret", "", "secret")
+	ServerStartupFlags.TODO_DATASOURCE_HOST=os.Getenv("TODO_DATASOURCE_HOST")
+	ServerStartupFlags.TODO_DATASOURCE_USERNAME=os.Getenv("TODO_DATASOURCE_USERNAME")
+	ServerStartupFlags.TODO_DATASOURCE_PASSWORD=os.Getenv("TODO_DATASOURCE_PASSWORD")
+	ServerStartupFlags.TODO_REDIS_HOST=os.Getenv("TODO_REDIS_HOST")
+	ServerStartupFlags.TODO_REDIS_PASSWORD=os.Getenv("TODO_REDIS_PASSWORD")
+	ServerStartupFlags.ShowSQL=os.Getenv("ShowSQL")
+	ServerStartupFlags.TODO_Appid=os.Getenv("TODO_Appid")
+	ServerStartupFlags.TODO_Secret=os.Getenv("TODO_Secret")
 
 	if !flag.Parsed() {
 		flag.Parse()
