@@ -87,7 +87,7 @@ func wxLogin(r *ghttp.Request) {
 	}
 	//判断用户是否是新用户
 	_, err = models.MUser.GetUserByOpenID(wxLoginResp.Openid)
-	if err != nil && gorm.IsRecordNotFoundError(err) {
+	if err != nil && gorm.RecordNotFoundError == err {
 		//将此用户插入到数据库中
 		newUser := &models.User{
 			OpenID:     wxLoginResp.Openid,
