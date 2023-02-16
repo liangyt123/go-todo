@@ -3,9 +3,9 @@ package db
 import (
 	"fmt"
 
-	mmysql  "gorm.io/driver/mysql"
-	"gorm.io/gorm"
 	"github.com/spf13/cast"
+	mmysql "gorm.io/driver/mysql"
+	"gorm.io/gorm"
 )
 
 // Mysql 供外部调用
@@ -19,7 +19,6 @@ type myDB struct {
 type mysql struct {
 	db *myDB //为了实现关闭数据库，所以在内部持有一个DB对象
 }
-
 
 func url(conf map[string]interface{}) string {
 	user := cast.ToString(conf["username"])
@@ -35,18 +34,17 @@ func (*mysql) Name() string {
 }
 
 func (m *mysql) Init(conf map[string]interface{}) error {
-	db, err := gorm.Open(mmysql.Open(url(conf)), &gorm.Config{
-	})
+	db, err := gorm.Open(mmysql.Open(url(conf)), &gorm.Config{})
 	if err != nil {
 		return err
 	}
 	Mysql = &myDB{db}
 
-	createSQL := fmt.Sprintf(
-        "CREATE DATABASE IF NOT EXISTS `%s` CHARACTER SET utf8mb4;",
-        cast.ToString(conf["db"]),
-    )
-    db.Exec(createSQL)
+	// createSQL := fmt.Sprintf(
+	//     "CREATE DATABASE IF NOT EXISTS `%s` CHARACTER SET utf8mb4;",
+	//     cast.ToString(conf["db"]),
+	// )
+	// db.Exec(createSQL)
 	return nil
 }
 

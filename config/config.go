@@ -6,8 +6,8 @@ import (
 	"github.com/pibigstar/go-todo/utils/logger"
 	"github.com/spf13/cast"
 	"github.com/spf13/viper"
-	"testing"
 	"os"
+	"testing"
 )
 
 var log = logger.New("config")
@@ -46,7 +46,7 @@ type serverStartupFlags struct {
 	TODO_REDIS_HOST          string
 	TODO_REDIS_PORT          int
 	TODO_REDIS_PASSWORD      string
-	ShowSQL             bool
+	ShowSQL                  bool
 	TODO_Appid               string
 	TODO_Secret              string
 }
@@ -128,15 +128,15 @@ func buildFlags() {
 	flag.StringVar(&ServerStartupFlags.Host, "host", "127.0.0.1", "listening host")
 	flag.IntVar(&ServerStartupFlags.Port, "port", 7410, "listening port")
 	flag.StringVar(&ServerStartupFlags.Environment, "env", "dev", "run time environment")
-	flag.BoolVar(&ServerStartupFlags.ShowSQL, "ShowSQL", false, "show sql")
+	flag.BoolVar(&ServerStartupFlags.ShowSQL, "showsql", false, "show sql")
 
-	ServerStartupFlags.TODO_DATASOURCE_HOST=os.Getenv("TODO_DATASOURCE_HOST")
-	ServerStartupFlags.TODO_DATASOURCE_USERNAME=os.Getenv("TODO_DATASOURCE_USERNAME")
-	ServerStartupFlags.TODO_DATASOURCE_PASSWORD=os.Getenv("TODO_DATASOURCE_PASSWORD")
-	ServerStartupFlags.TODO_REDIS_HOST=os.Getenv("TODO_REDIS_HOST")
-	ServerStartupFlags.TODO_REDIS_PASSWORD=os.Getenv("TODO_REDIS_PASSWORD")
-	ServerStartupFlags.TODO_Appid=os.Getenv("TODO_Appid")
-	ServerStartupFlags.TODO_Secret=os.Getenv("TODO_Secret")
+	ServerStartupFlags.TODO_DATASOURCE_HOST = os.Getenv("TODO_DATASOURCE_HOST")
+	ServerStartupFlags.TODO_DATASOURCE_USERNAME = os.Getenv("TODO_DATASOURCE_USERNAME")
+	ServerStartupFlags.TODO_DATASOURCE_PASSWORD = os.Getenv("TODO_DATASOURCE_PASSWORD")
+	ServerStartupFlags.TODO_REDIS_HOST = os.Getenv("TODO_REDIS_HOST")
+	ServerStartupFlags.TODO_REDIS_PASSWORD = os.Getenv("TODO_REDIS_PASSWORD")
+	ServerStartupFlags.TODO_Appid = os.Getenv("TODO_Appid")
+	ServerStartupFlags.TODO_Secret = os.Getenv("TODO_Secret")
 
 	if !flag.Parsed() {
 		flag.Parse()

@@ -1,25 +1,30 @@
 package models
 
 import (
-	"time"
-	"sync"
 	"github.com/pibigstar/go-todo/models/db"
 	"github.com/pibigstar/go-todo/utils/logger"
+	"sync"
+	"time"
 )
 
 var log = logger.New("models")
 
+func init() {
+	go func() {
 
-func init(){
-	go func(){
-		time.Sleep(time.Second*10)
+		time.Sleep(time.Second * 10)
 		once.Do(onceBody)
 	}()
 }
 
 var once sync.Once
 var onceBody = func() {
-	
+
+	defer func() {
+		if err := recover(); err != nil {
+			log.Error("数据库初始化错误", err)
+		}
+	}()
 	db.Mysql.Migrator().CreateTable(&User{})
 	db.Mysql.Migrator().CreateIndex(&User{}, "id")
 	db.Mysql.Migrator().CreateIndex(&User{}, "phone")

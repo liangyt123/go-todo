@@ -1,17 +1,10 @@
 module github.com/pibigstar/go-todo
 
 require (
-	cloud.google.com/go v0.39.0 // indirect
-	github.com/denisenkom/go-mssqldb v0.0.0-20190515213511-eb9f6a1743f3 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/go-redis/redis v6.15.2+incompatible
-	github.com/go-sql-driver/mysql v1.4.1
 	github.com/gogf/gf v1.9.10
-	github.com/google/go-cmp v0.3.0 // indirect
 	github.com/google/uuid v1.1.1 // indirect
-	gorm.io/gorm v1.9.8
-	github.com/jinzhu/inflection v0.0.0-20190603042836-f5c5f50e6090 // indirect
-	github.com/lib/pq v1.1.1 // indirect
 	github.com/magiconair/properties v1.8.1 // indirect
 	github.com/onsi/ginkgo v1.8.0 // indirect
 	github.com/onsi/gomega v1.5.0 // indirect
@@ -28,6 +21,8 @@ require (
 	go.uber.org/zap v1.10.0
 	golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
 	google.golang.org/grpc v1.21.1
+	gorm.io/driver/mysql v1.4.6
+	gorm.io/gorm v1.24.5
 )
 
 go 1.13
