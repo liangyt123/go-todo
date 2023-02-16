@@ -10,6 +10,11 @@ import (
 var log = logger.New("models")
 
 func init() {
+	defer func() {
+		if err := recover(); err != nil {
+			log.Error("init", err)
+		}
+	}()
 	go func() {
 
 		time.Sleep(time.Second * 10)
@@ -19,7 +24,6 @@ func init() {
 
 var once sync.Once
 var onceBody = func() {
-
 	defer func() {
 		if err := recover(); err != nil {
 			log.Error("数据库初始化错误", err)
