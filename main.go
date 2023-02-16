@@ -4,6 +4,8 @@ import (
 	_ "github.com/pibigstar/go-todo/controller"
 	_ "github.com/pibigstar/go-todo/controller/admin"
 
+	"github.com/liangyt123/go-todo/models"
+
 	"github.com/gogf/gf/frame/g"
 	"github.com/pibigstar/go-todo/config"
 )
@@ -23,5 +25,6 @@ func main() {
 	s.SetHTTPSPort(443)
 	// 开启性能分析，可访问页面/debug/pprof
 	s.EnablePprof()
+	models.InitTable()
 	s.Run()
 }
