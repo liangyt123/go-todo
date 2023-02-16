@@ -24,6 +24,9 @@ func init() {
 
 var once sync.Once
 var onceBody = func() {
+	if db.Mysql == nil {
+		return
+	}
 	defer func() {
 		if err := recover(); err != nil {
 			log.Error("数据库初始化错误", err)
