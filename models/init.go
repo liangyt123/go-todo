@@ -3,7 +3,6 @@ package models
 import (
 	"github.com/pibigstar/go-todo/models/db"
 	"github.com/pibigstar/go-todo/utils/logger"
-	"sync"
 	"time"
 )
 
@@ -16,13 +15,11 @@ func init() {
 		}
 	}()
 	go func() {
-
 		time.Sleep(time.Second * 10)
-		once.Do(onceBody)
+		onceBody()
 	}()
 }
 
-var once sync.Once
 var onceBody = func() {
 	if !db.OkMysqlInit {
 		return
