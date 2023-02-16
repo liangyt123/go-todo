@@ -33,13 +33,15 @@ func (*mysql) Name() string {
 	return "mysql"
 }
 
+var OkMysqlInit = false
+
 func (m *mysql) Init(conf map[string]interface{}) error {
 	db, err := gorm.Open(mmysql.Open(url(conf)), &gorm.Config{})
 	if err != nil {
 		return err
 	}
 	Mysql = &myDB{db}
-
+	OkMysqlInit = true
 	// createSQL := fmt.Sprintf(
 	//     "CREATE DATABASE IF NOT EXISTS `%s` CHARACTER SET utf8mb4;",
 	//     cast.ToString(conf["db"]),

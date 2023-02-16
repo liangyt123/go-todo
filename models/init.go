@@ -24,7 +24,7 @@ func init() {
 
 var once sync.Once
 var onceBody = func() {
-	if db.Mysql == nil {
+	if !db.OkMysqlInit {
 		return
 	}
 	defer func() {
